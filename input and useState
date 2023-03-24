@@ -1,0 +1,47 @@
+import React, { Component, useState } from 'react'
+import { StyleSheet, Text, View, Button, TextInput } from 'react-native'
+
+
+//export class App extends Component {
+  export default function App(){
+ // render() {
+    const [name, setName]= useState("joy")
+    const handleClick = ()=>{
+        setName("Aisha")
+    }
+    return (
+      <View style={styles.container}>
+        <Text> Enter your name: </Text>
+        <TextInput
+        placeholder='enter name'
+        style={styles.input}
+        onChangeText={(e)=> setName(e)} />
+        <Text>my name is {name}</Text>
+        <Button title="Change" onPress={handleClick}/>
+        
+        <Text> Enter your Age: </Text>
+        <TextInput
+        keyboardType='numeric'
+        placeholder='enter age'
+        style={styles.input}
+        onChangeText={(e)=> setName(e)} />
+        <Text>my age is {name}</Text>
+      </View>
+    )
+ //}
+}
+
+//export default App
+const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: '#fff',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    input:{
+        borderWidth:1,
+        borderColor: "#777",
+        padding: 8
+    }
+  });
